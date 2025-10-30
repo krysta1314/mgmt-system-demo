@@ -1,0 +1,46 @@
+[
+  {
+    "review_id": "RV001",
+    "user_id": "10001",
+    "email": "krystal@genmi.ai",
+    "satisfaction": "Satisfied",
+    "review_type": "Functionality",
+    "comment": "Easy to use and produces great results",
+    "created_at": "2025-10-25",
+    "status": "resolved",
+    "remark": ""
+  },
+  {
+    "review_id": "RV002",
+    "user_id": "10002",
+    "email": "leo@genmi.ai",
+    "satisfaction": "Very Satisfied",
+    "review_type": "Quality",
+    "comment": "Output quality exceeds expectations",
+    "created_at": "2025-10-26",
+    "status": "resolved",
+    "remark": ""
+  },
+  {
+    "review_id": "RV004",
+    "user_id": "10004",
+    "email": "mike@example.com",
+    "satisfaction": "Satisfied",
+    "review_type": "Support",
+    "comment": "Customer support was helpful",
+    "created_at": "2025-10-27",
+    "status": "pending",
+    "remark": ""
+  },
+  {
+    "review_id": "RV005",
+    "user_id": "10005",
+    "email": "emma@example.com",
+    "satisfaction": "Very Satisfied",
+    "review_type": "Overall",
+    "comment": "Best AI video tool I've used!",
+    "created_at": "2025-10-28",
+    "status": "in_progress",
+    "remark": "正在进一步分析问题"
+  }
+]

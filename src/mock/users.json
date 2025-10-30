@@ -1,0 +1,32 @@
+[
+  {
+    "user_id": "10003",
+    "username": "Sarah",
+    "email": "sarah@example.com",
+    "country": "Canada",
+    "browser": "Firefox",
+    "device": "Windows",
+    "channel": "Google",
+    "register_time": "2025-10-15 14:22:45"
+  },
+  {
+    "user_id": "10004",
+    "username": "Mike",
+    "email": "mike@example.com",
+    "country": "Australia",
+    "browser": "Chrome",
+    "device": "Android",
+    "channel": "Google",
+    "register_time": "2025-10-18 08:30:12"
+  },
+  {
+    "user_id": "10005",
+    "username": "Emma",
+    "email": "emma@example.com",
+    "country": "US",
+    "browser": "Edge",
+    "device": "Windows",
+    "channel": "Google",
+    "register_time": "2025-10-20 16:45:22"
+  }
+]
