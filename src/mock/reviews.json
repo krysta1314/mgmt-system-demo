@@ -8,7 +8,11 @@
     "comment": "Easy to use and produces great results",
     "created_at": "2025-10-25",
     "status": "resolved",
-    "remark": ""
+    "remark": "",
+    "editBy": {
+      "name": "David Lee",
+      "avatar": "https://i.pravatar.cc/150?img=33"
+    }
   },
   {
     "review_id": "RV002",
@@ -19,7 +23,11 @@
     "comment": "Output quality exceeds expectations",
     "created_at": "2025-10-26",
     "status": "resolved",
-    "remark": ""
+    "remark": "",
+    "editBy": {
+      "name": "Alice Zhang",
+      "avatar": "https://i.pravatar.cc/150?img=1"
+    }
   },
   {
     "review_id": "RV004",
@@ -30,7 +38,11 @@
     "comment": "Customer support was helpful",
     "created_at": "2025-10-27",
     "status": "pending",
-    "remark": ""
+    "remark": "",
+    "editBy": {
+      "name": "Bob Chen",
+      "avatar": "https://i.pravatar.cc/150?img=12"
+    }
   },
   {
     "review_id": "RV005",
@@ -41,6 +53,10 @@
     "comment": "Best AI video tool I've used!",
     "created_at": "2025-10-28",
     "status": "in_progress",
-    "remark": "正在进一步分析问题"
+    "remark": "正在进一步分析问题",
+    "editBy": {
+      "name": "Carol Wu",
+      "avatar": "https://i.pravatar.cc/150?img=5"
+    }
   }
 ]

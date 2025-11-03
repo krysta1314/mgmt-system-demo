@@ -1,12 +1,12 @@
 <template>
-  <div class="space-y-6">
+  <div class="space-y-4 md:space-y-6">
     <div class="flex justify-between items-center">
-      <h1 class="text-2xl font-bold text-gray-900">反馈列表</h1>
+      <h1 class="text-xl md:text-2xl font-bold text-gray-900">反馈列表</h1>
     </div>
 
     <!-- Filters -->
-    <div class="bg-white rounded-lg shadow p-4">
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+    <div class="bg-white rounded-lg shadow p-3 md:p-4">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-4">
         <!-- <select
           v-model="filterSatisfaction"
           class="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
@@ -17,14 +17,14 @@
           </option>
         </select> -->
         <select v-model="filterStatus"
-          class="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent">
+          class="px-3 md:px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-sm md:text-base">
           <option value="">所有状态</option>
           <option v-for="status in statuses" :key="status" :value="status">
             {{ getStatusText(status) }}
           </option>
         </select>
         <button @click="clearFilters"
-          class="px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors">
+          class="px-3 md:px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors text-sm md:text-base">
           清除筛选
         </button>
       </div>
@@ -50,6 +50,12 @@
         }">
           {{ getStatusText(value) }}
         </span>
+      </template>
+      <template #cell-editBy="{ value }">
+        <div class="flex items-center gap-2">
+          <img :src="value.avatar" :alt="value.name" class="w-8 h-8 rounded-full object-cover" />
+          <span class="text-sm text-gray-900">{{ value.name }}</span>
+        </div>
       </template>
       <template #cell-remark="{ value }">
         <div class="max-w-xs">
@@ -201,6 +207,7 @@ const columns = [
   { key: 'media', label: '图/视频' },
   { key: 'created_at', label: '创建时间' },
   { key: 'status', label: '状态' },
+  { key: 'editBy', label: 'Edit by' },
   { key: 'remark', label: '备注' },
   { key: 'actions', label: '操作' }
 ]

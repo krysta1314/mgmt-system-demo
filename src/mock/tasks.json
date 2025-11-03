@@ -14,6 +14,8 @@
     "inputParams": "{\"duration\": 15, \"resolution\": \"1080p\", \"fps\": 30}",
     "modelId": "sora-v1.0",
     "duration": "15s",
+    "status": "success",
+    "apiSource": "fal",
     "createdAt": "2025-10-18 10:30:00",
     "updatedAt": "2025-10-18 10:45:00"
   },
@@ -32,6 +34,8 @@
     "inputParams": "{\"duration\": 12, \"resolution\": \"720p\", \"fps\": 24}",
     "modelId": "sora-v1.0",
     "duration": "12s",
+    "status": "success",
+    "apiSource": "云雾",
     "createdAt": "2025-10-18 14:20:00",
     "updatedAt": "2025-10-18 14:35:00"
   },
@@ -50,6 +54,8 @@
     "inputParams": "{\"style\": \"cyberpunk\", \"resolution\": \"2048x2048\"}",
     "modelId": "seeddance-v2.1",
     "duration": "N/A",
+    "status": "failed",
+    "apiSource": "fal",
     "createdAt": "2025-10-19 09:15:00",
     "updatedAt": "2025-10-19 09:20:00"
   },
@@ -68,6 +74,8 @@
     "inputParams": "{\"style\": \"abstract\", \"resolution\": \"1024x1024\"}",
     "modelId": "seeddance-v2.1",
     "duration": "N/A",
+    "status": "success",
+    "apiSource": "kie",
     "createdAt": "2025-10-21 16:40:00",
     "updatedAt": "2025-10-21 16:42:00"
   },
@@ -86,6 +94,8 @@
     "inputParams": "{\"duration\": 8, \"resolution\": \"1080p\", \"fps\": 60}",
     "modelId": "king-v1.5",
     "duration": "8s",
+    "status": "failed",
+    "apiSource": "fal",
     "createdAt": "2025-10-22 11:25:00",
     "updatedAt": "2025-10-22 11:40:00"
   }

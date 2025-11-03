@@ -1,42 +1,18 @@
 <template>
-  <div class="space-y-6">
+  <div class="space-y-4 md:space-y-6">
     <div class="flex justify-between items-center">
-      <h1 class="text-2xl font-bold text-gray-900">用户列表</h1>
+      <h1 class="text-xl md:text-2xl font-bold text-gray-900">用户列表</h1>
     </div>
 
     <!-- Filters and Search -->
-    <div class="bg-white rounded-lg shadow p-4">
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+    <div class="bg-white rounded-lg shadow p-3 md:p-4">
+      <div class="grid grid-cols-1 gap-3 md:gap-4" style="width: 300px;">
         <input
           v-model="searchQuery"
           type="text"
           placeholder="按用户ID/邮箱搜索"
-          class="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+          class="w-full px-3 md:px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-sm md:text-base"
         />
-        <!-- <select
-          v-model="filterCountry"
-          class="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
-        >
-          <option value="">All Countries</option>
-          <option v-for="country in countries" :key="country" :value="country">
-            {{ country }}
-          </option>
-        </select> -->
-        <!-- <select
-          v-model="filterChannel"
-          class="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
-        >
-          <option value="">All Channels</option>
-          <option v-for="channel in channels" :key="channel" :value="channel">
-            {{ channel }}
-          </option>
-        </select> -->
-        <!-- <button
-          @click="clearFilters"
-          class="px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors"
-        >
-          Clear Filters
-        </button> -->
       </div>
     </div>
 
@@ -55,12 +31,12 @@
     />
 
     <!-- Pagination (Mock) -->
-    <div class="flex justify-center items-center gap-2">
-      <button class="px-4 py-2 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 disabled:opacity-50">
+    <div class="flex justify-center items-center gap-2 flex-wrap">
+      <button class="px-3 md:px-4 py-2 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 disabled:opacity-50 text-sm md:text-base">
         上一页
       </button>
-      <span class="text-sm text-gray-600">第 1 页，共 1 页</span>
-      <button class="px-4 py-2 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 disabled:opacity-50">
+      <span class="text-xs md:text-sm text-gray-600">第 1 页，共 1 页</span>
+      <button class="px-3 md:px-4 py-2 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 disabled:opacity-50 text-sm md:text-base">
         下一页
       </button>
     </div>

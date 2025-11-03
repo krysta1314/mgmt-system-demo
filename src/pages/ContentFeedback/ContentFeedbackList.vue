@@ -1,15 +1,15 @@
 <template>
-  <div class="space-y-6">
+  <div class="space-y-4 md:space-y-6">
     <div class="flex justify-between items-center">
-      <h1 class="text-2xl font-bold text-gray-900">内容反馈列表</h1>
+      <h1 class="text-xl md:text-2xl font-bold text-gray-900">内容反馈列表</h1>
     </div>
 
     <!-- Filters -->
-    <div class="bg-white rounded-lg shadow p-4">
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+    <div class="bg-white rounded-lg shadow p-3 md:p-4">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-4">
         <select
           v-model="filterContentType"
-          class="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+          class="px-3 md:px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-sm md:text-base"
         >
           <option value="">所有内容类型</option>
           <option v-for="type in contentTypes" :key="type" :value="type">
@@ -18,7 +18,7 @@
         </select>
         <select
           v-model="filterStatus"
-          class="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+          class="px-3 md:px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-transparent text-sm md:text-base"
         >
           <option value="">所有状态</option>
           <option v-for="status in statuses" :key="status" :value="status">
@@ -27,7 +27,7 @@
         </select>
         <button
           @click="clearFilters"
-          class="px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors"
+          class="px-3 md:px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 transition-colors text-sm md:text-base"
         >
           清除筛选
         </button>
@@ -68,6 +68,12 @@
         <div class="max-w-xs">
           <span v-if="value" class="text-sm text-gray-700">{{ value }}</span>
           <span v-else class="text-sm text-gray-400">暂无备注</span>
+        </div>
+      </template>
+      <template #cell-editBy="{ value }">
+        <div class="flex items-center gap-2">
+          <img :src="value.avatar" :alt="value.name" class="w-8 h-8 rounded-full object-cover" />
+          <span class="text-sm text-gray-900">{{ value.name }}</span>
         </div>
       </template>
       <template #cell-actions="{ row }">
@@ -143,12 +149,12 @@
     </div>
 
     <!-- Pagination (Mock) -->
-    <div class="flex justify-center items-center gap-2">
-      <button class="px-4 py-2 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 disabled:opacity-50">
+    <div class="flex justify-center items-center gap-2 flex-wrap">
+      <button class="px-3 md:px-4 py-2 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 disabled:opacity-50 text-sm md:text-base">
         上一页
       </button>
-      <span class="text-sm text-gray-600">第 1 页，共 1 页</span>
-      <button class="px-4 py-2 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 disabled:opacity-50">
+      <span class="text-xs md:text-sm text-gray-600">第 1 页，共 1 页</span>
+      <button class="px-3 md:px-4 py-2 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 disabled:opacity-50 text-sm md:text-base">
         下一页
       </button>
     </div>
@@ -180,6 +186,7 @@ const columns = [
   { key: 'comment', label: '评论' },
   { key: 'created_at', label: '创建时间' },
   { key: 'status', label: '状态' },
+  { key: 'editBy', label: 'Edit by' },
   { key: 'remark', label: '备注' },
   { key: 'actions', label: '操作' }
 ]

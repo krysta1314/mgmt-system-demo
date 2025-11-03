@@ -1,26 +1,26 @@
 <template>
-  <div class="space-y-6">
+  <div class="space-y-4 md:space-y-6">
     <!-- Back Button -->
-    <button @click="$router.push('/users')" class="flex items-center gap-2 text-indigo-600 hover:text-indigo-700">
+    <button @click="$router.push('/users')" class="flex items-center gap-2 text-indigo-600 hover:text-indigo-700 text-sm md:text-base">
       <span>←</span>
       <span>返回用户列表</span>
     </button>
 
     <!-- Two Column Layout -->
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6" v-if="user">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-6" v-if="user">
       <!-- Left: User Info -->
-      <div class="bg-white rounded-lg shadow p-6">
-        <h2 class="text-xl font-bold text-gray-900 mb-4 border-b pb-2">用户信息</h2>
-        <div class="space-y-4">
+      <div class="bg-white rounded-lg shadow p-4 md:p-6">
+        <h2 class="text-lg md:text-xl font-bold text-gray-900 mb-4 border-b pb-2">用户信息</h2>
+        <div class="space-y-3 md:space-y-4">
           <div>
-            <h3 class="text-lg font-semibold text-gray-900">{{ user.username }}</h3>
-            <p class="text-gray-600 text-sm mt-1">{{ user.email }}</p>
+            <h3 class="text-base md:text-lg font-semibold text-gray-900">{{ user.username }}</h3>
+            <p class="text-gray-600 text-xs md:text-sm mt-1">{{ user.email }}</p>
           </div>
 
-          <div class="grid grid-cols-1 gap-3 text-sm">
+          <div class="grid grid-cols-1 gap-2 md:gap-3 text-xs md:text-sm">
             <div class="flex justify-between py-2 border-b border-gray-100">
               <span class="text-gray-500">用户ID:</span>
-              <span class="font-medium text-gray-900">{{ user.user_id }}</span>
+              <span class="font-medium text-gray-900 break-all ml-2">{{ user.user_id }}</span>
             </div>
             <div class="flex justify-between py-2 border-b border-gray-100">
               <span class="text-gray-500">国家:</span>
@@ -40,17 +40,17 @@
             </div>
             <div class="flex justify-between py-2">
               <span class="text-gray-500">注册时间:</span>
-              <span class="font-medium text-gray-900">{{ user.register_time }}</span>
+              <span class="font-medium text-gray-900 break-all ml-2">{{ user.register_time }}</span>
             </div>
           </div>
         </div>
       </div>
 
       <!-- Right: Subscription Info -->
-      <div class="bg-white rounded-lg shadow p-6">
-        <h2 class="text-xl font-bold text-gray-900 mb-4 border-b pb-2">订阅信息</h2>
-        <div class="space-y-4">
-          <!-- <div class="grid grid-cols-1 gap-3 text-sm">
+      <div class="bg-white rounded-lg shadow p-4 md:p-6">
+        <h2 class="text-lg md:text-xl font-bold text-gray-900 mb-4 border-b pb-2">订阅信息</h2>
+        <div class="space-y-3 md:space-y-4">
+          <!-- <div class="grid grid-cols-1 gap-2 md:gap-3 text-xs md:text-sm">
             <div class="flex justify-between py-2 border-b border-gray-100">
               <span class="text-gray-500">订阅状态:</span>
               <span class="px-2 py-1 text-xs rounded-full font-medium" :class="{
@@ -88,21 +88,19 @@
 
     <!-- Tabs -->
     <div class="bg-white rounded-lg shadow">
-      <div class="px-6 pt-4">
+      <div class="px-4 md:px-6 pt-4">
         <Tabs :tabs="tabs" :active-tab="activeTab" @change="activeTab = $event" />
       </div>
 
-      <div class="p-6">
+      <div class="p-4 md:p-6">
         <!-- Tasks Tab -->
         <div v-if="activeTab === 'tasks'">
-          <!-- <h3 class="text-lg font-semibold mb-4">任务</h3> -->
           <Table v-if="userTasks.length > 0" :columns="taskColumns" :data="userTasks" />
           <EmptyState v-else title="" message="该用户尚未创建任何任务。" />
         </div>
 
         <!-- Feedback Tab -->
         <div v-if="activeTab === 'feedback'">
-          <!-- <h3 class="text-lg font-semibold mb-4">Feedback</h3> -->
           <Table v-if="userFeedback.length > 0" :columns="feedbackColumns" :data="userFeedback">
             <template #cell-status="{ value }">
               <span class="px-2 py-1 text-xs rounded-full" :class="{

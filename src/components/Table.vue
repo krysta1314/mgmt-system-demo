@@ -1,13 +1,14 @@
 <template>
-  <div class="bg-white rounded-lg shadow overflow-hidden">
-    <div class="overflow-x-auto">
-      <table class="min-w-full divide-y divide-gray-200">
+  <div class="rounded-lg shadow overflow-hidden">
+    <!-- Scrollable Table View (All Screen Sizes) -->
+    <div class="overflow-x-auto bg-white">
+      <table class="divide-y divide-gray-200 bg-white min-w-full">
         <thead class="bg-gray-50">
           <tr>
             <th
               v-for="column in columns"
               :key="column.key"
-              class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+              class="px-3 md:px-6 py-2 md:py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider whitespace-nowrap"
             >
               {{ column.label }}
             </th>
@@ -23,7 +24,7 @@
             <td
               v-for="column in columns"
               :key="column.key"
-              class="px-6 py-4 whitespace-nowrap text-sm text-gray-900"
+              class="px-3 md:px-6 py-3 md:py-4 whitespace-nowrap text-xs md:text-sm text-gray-900"
             >
               <slot :name="`cell-${column.key}`" :row="row" :value="row[column.key]">
                 {{ row[column.key] }}
